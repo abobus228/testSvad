@@ -6,13 +6,35 @@ showSlide(currentSlide);
 
 function showSlide(index) {
     slides.forEach((slide, i) => {
-        slide.style.display = i === index ? 'block' : 'none';
+        slide.classList.toggle('active', i === index);
     });
 }
 
 function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
+    if (currentSlide < slides.length - 1) {
+        currentSlide++;
+        showSlide(currentSlide);
+    }
+}
+
+function prevSlide() {
+    if (currentSlide > 0) {
+        currentSlide--;
+        showSlide(currentSlide);
+    }
+}
+
+function showPopup(id) {
+    const popup = document.getElementById(id);
+    popup.style.display = 'block';
+    setTimeout(() => {
+        popup.style.display = 'none';
+    }, 3000);
+}
+
+function toggleAnswer(id) {
+    const answer = document.getElementById(id);
+    answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
 }
 
 function sendResponse(isAttending) {
@@ -39,18 +61,11 @@ function sendResponse(isAttending) {
     .then(response => response.text())
     .then(data => {
         alert('Спасибо за ваш ответ!');
+        currentSlide = slides.length - 1; // Переход на слайд с благодарностью
+        showSlide(currentSlide);
     })
     .catch(error => {
         console.error('Ошибка:', error);
         alert('Произошла ошибка при отправке ответа.');
     });
 }
-
-// Комментарий для добавления вопросов и ответов
-/*
-Чтобы добавить вопросы и ответы, вставьте их в блок с id="faq" в формате:
-<div class="question">
-    <h3>Вопрос</h3>
-    <p>Ответ</p>
-</div>
-*/

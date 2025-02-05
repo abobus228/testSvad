@@ -5,10 +5,15 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Great Vibes', cursive;
     background: linear-gradient(135deg, #f9f9f9, #fff5e6);
     color: #333;
     line-height: 1.6;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
 .container {
@@ -16,6 +21,11 @@ body {
     margin: 0 auto;
     padding: 20px;
     text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
 }
 
 .slide {
@@ -24,13 +34,17 @@ body {
     animation: fadeIn 1s ease-in-out;
 }
 
-.slide h1, .slide h2 {
+.slide.active {
+    display: block;
+}
+
+h1, h2 {
     font-family: 'Great Vibes', cursive;
     font-size: 3rem;
     margin-bottom: 20px;
 }
 
-.slide p {
+p {
     font-size: 1.2rem;
     margin-bottom: 20px;
 }
@@ -50,6 +64,53 @@ button:hover {
     background: #ff3b2f;
 }
 
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.back-button {
+    background: #6f61ff;
+}
+
+.back-button:hover {
+    background: #4b3dcc;
+}
+
+.photo-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.photo:hover {
+    transform: scale(1.1);
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
 .timeline {
     display: flex;
     flex-direction: column;
@@ -67,12 +128,76 @@ button:hover {
     max-width: 600px;
 }
 
-.event h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+.animation-container {
+    position: relative;
+    margin-top: 20px;
+}
+
+.flower, .ribbon-animation {
+    position: absolute;
+    animation: float 3s infinite ease-in-out;
+}
+
+.flower {
+    width: 50px;
+    height: 50px;
+    background: url('flower.png') no-repeat center/cover;
+    top: 0;
+    left: 20%;
+}
+
+.ribbon-animation {
+    width: 100px;
+    height: 20px;
+    background: url('ribbon.png') no-repeat center/cover;
+    top: 50px;
+    right: 20%;
+}
+
+.ribbon {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    background: url('ribbon-side.png') repeat-y;
+    z-index: 0;
+}
+
+.left-ribbon {
+    left: 0;
+}
+
+.right-ribbon {
+    right: 0;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+.question {
+    background: #fff;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.answer {
+    display: none;
+    padding: 10px;
+    margin-top: 10px;
+    background: #f9f9f9;
+    border-radius: 5px;
 }
