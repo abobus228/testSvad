@@ -107,8 +107,12 @@
             <h2>Подтвердите ваше участие</h2>
             <p>Пожалуйста, подтвердите, сможете ли вы присутствовать на нашей свадьбе.</p>
             <form id="responseForm">
-                <input type="text" id="firstName" placeholder="Ваше имя" required>
-                <input type="text" id="lastName" placeholder="Ваша фамилия" required>
+                <div class="form-group">
+                    <input type="text" id="firstName" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="lastName" placeholder="Ваша фамилия" required>
+                </div>
                 <div class="button-container">
                     <button class="back-button" onclick="prevSlide()">Вернуться</button>
                     <button type="button" onclick="sendResponse(true)">Я буду!</button>
