@@ -25,7 +25,7 @@ function sendResponse(isAttending) {
     }
 
     // Отправка данных на сервер
-    fetch('http://localhost:3000/send-response', {
+    fetch('/send-response', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -39,7 +39,6 @@ function sendResponse(isAttending) {
     .then(response => response.text())
     .then(data => {
         alert('Спасибо за ваш ответ!');
-        nextSlide();
     })
     .catch(error => {
         console.error('Ошибка:', error);

@@ -1,21 +1,23 @@
 const express = require('express');
 const axios = require('axios');
 const bodyParser = require('body-parser');
-const cors = require('cors'); // Добавьте эту строку
+const path = require('path');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Разрешаем CORS
-app.use(cors()); // Добавьте эту строку
-
-// Токен вашего бота
-const BOT_TOKEN = '7654180574:AAHg9srd48qA02ppgYmHwF9CRixrifFA32w';
-// Ваш ID в Telegram (узнать можно у бота @userinfobot)
-const CHAT_ID = '6013048188';
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+});
 
 // Middleware для обработки JSON
 app.use(bodyParser.json());
+
+// Обслуживаем статические файлы из папки public
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Обработчик POST-запроса с сайта
 app.post('/send-response', (req, res) => {
@@ -25,8 +27,8 @@ app.post('/send-response', (req, res) => {
     const message = `Гость: ${firstName} ${lastName}\nПрисутствие: ${isAttending ? 'Будет' : 'Не сможет'}`;
 
     // Отправляем сообщение в Telegram
-    axios.post(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-        chat_id: CHAT_ID,
+    axios.post(`https://api.telegram.org/bot${process.env.BOT_TOKEN}/sendMessage`, {
+        chat_id: process.env.CHAT_ID,
         text: message,
     })
     .then(response => {
