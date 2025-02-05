@@ -8,8 +8,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Ленточки по бокам -->
     <div class="ribbon left-ribbon"></div>
     <div class="ribbon right-ribbon"></div>
+
+    <!-- Основной контейнер -->
     <div class="container">
         <!-- Первый слайд -->
         <section class="slide active" id="slide1">
@@ -17,6 +20,7 @@
             <h2>08.08.2025</h2>
             <p>Добро пожаловать на нашу свадьбу!</p>
             <div class="photo-container">
+                <!-- Добавьте свои фото, заменив photo1.jpg и photo2.jpg -->
                 <img src="photo1.jpg" alt="Фото 1" class="photo">
                 <img src="photo2.jpg" alt="Фото 2" class="photo">
             </div>
@@ -34,10 +38,6 @@
                 Мы будем очень рады, если вы разделите этот счастливый день с нами.<br>
                 Увидимся на нашей свадьбе!
             </p>
-            <button class="interactive-button" onclick="showPopup('popup1')">Нажми меня!</button>
-            <div id="popup1" class="popup">
-                <p>Мы ждем вас с нетерпением!</p>
-            </div>
             <div class="button-container">
                 <button class="back-button" onclick="prevSlide()">Вернуться</button>
                 <button onclick="nextSlide()">Далее</button>
@@ -73,10 +73,6 @@
                     <p>Окончание вечера</p>
                 </div>
             </div>
-            <div class="animation-container">
-                <div class="flower"></div>
-                <div class="ribbon-animation"></div>
-            </div>
             <div class="button-container">
                 <button class="back-button" onclick="prevSlide()">Вернуться</button>
                 <button onclick="nextSlide()">Далее</button>
@@ -87,6 +83,7 @@
         <section class="slide" id="slide4">
             <h2>Ответы на вопросы</h2>
             <div id="faq">
+                <!-- Добавьте свои вопросы и ответы, используя структуру ниже -->
                 <div class="question" onclick="toggleAnswer('answer1')">
                     <h3>Вопрос 1</h3>
                     <p id="answer1" class="answer">Ответ на вопрос 1</p>
@@ -121,13 +118,22 @@
             </form>
         </section>
 
-        <!-- Благодарность -->
+        <!-- Благодарность за подтверждение -->
         <section class="slide" id="slide6">
             <h2>Спасибо за ваш ответ!</h2>
             <p>Мы будем рады видеть вас на нашей свадьбе!</p>
             <p>Место проведения: Калининградская область, г. Светлогорск, ул. Тихая, д. 5</p>
             <p>Александр: <a href="tel:89999999999">8 (999) 999-99-99</a></p>
             <p>Виктория: <a href="tel:89999999999">8 (999) 999-99-99</a></p>
+            <div class="button-container">
+                <button class="back-button" onclick="prevSlide()">Вернуться</button>
+            </div>
+        </section>
+
+        <!-- Сообщение для тех, кто не сможет прийти -->
+        <section class="slide" id="slide7">
+            <h2>Спасибо за ваш ответ!</h2>
+            <p>Жаль, что вы не сможете прийти, но мы будем рады увидеть вас в другой раз!</p>
             <div class="button-container">
                 <button class="back-button" onclick="prevSlide()">Вернуться</button>
             </div>

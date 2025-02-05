@@ -24,14 +24,6 @@ function prevSlide() {
     }
 }
 
-function showPopup(id) {
-    const popup = document.getElementById(id);
-    popup.style.display = 'block';
-    setTimeout(() => {
-        popup.style.display = 'none';
-    }, 3000);
-}
-
 function toggleAnswer(id) {
     const answer = document.getElementById(id);
     answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
@@ -60,8 +52,11 @@ function sendResponse(isAttending) {
     })
     .then(response => response.text())
     .then(data => {
-        alert('Спасибо за ваш ответ!');
-        currentSlide = slides.length - 1; // Переход на слайд с благодарностью
+        if (isAttending) {
+            currentSlide = 5; // Переход на слайд с благодарностью
+        } else {
+            currentSlide = 6; // Переход на слайд для тех, кто не сможет прийти
+        }
         showSlide(currentSlide);
     })
     .catch(error => {

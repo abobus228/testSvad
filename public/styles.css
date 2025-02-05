@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Great Vibes', cursive;
-    background: linear-gradient(135deg, #f9f9f9, #fff5e6);
+    background: linear-gradient(135deg, #f9f9f9, #fff5e6); /* Измените градиент для смены фона */
     color: #333;
     line-height: 1.6;
     height: 100vh;
@@ -54,7 +54,7 @@ p {
 button {
     padding: 10px 20px;
     font-size: 1rem;
-    background: #ff6f61;
+    background: #ff6f61; /* Цвет кнопок */
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -63,7 +63,7 @@ button {
 }
 
 button:hover {
-    background: #ff3b2f;
+    background: #ff3b2f; /* Цвет кнопок при наведении */
 }
 
 .button-container {
@@ -74,11 +74,11 @@ button:hover {
 }
 
 .back-button {
-    background: #6f61ff;
+    background: #f4a460; /* Теплый цвет для кнопки "Вернуться" */
 }
 
 .back-button:hover {
-    background: #4b3dcc;
+    background: #e9967a; /* Цвет при наведении */
 }
 
 .photo-container {
@@ -100,19 +100,6 @@ button:hover {
     transform: scale(1.1);
 }
 
-.popup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-}
-
 .timeline {
     display: flex;
     flex-direction: column;
@@ -130,30 +117,15 @@ button:hover {
     max-width: 600px;
 }
 
-.animation-container {
-    position: relative;
-    margin-top: 20px;
+.event h3 {
+    font-family: 'Roboto', sans-serif; /* Более понятный шрифт для распорядка дня */
+    font-size: 1.5rem;
+    margin-bottom: 10px;
 }
 
-.flower, .ribbon-animation {
-    position: absolute;
-    animation: float 3s infinite ease-in-out;
-}
-
-.flower {
-    width: 50px;
-    height: 50px;
-    background: url('flower.png') no-repeat center/cover;
-    top: 0;
-    left: 20%;
-}
-
-.ribbon-animation {
-    width: 100px;
-    height: 20px;
-    background: url('ribbon.png') no-repeat center/cover;
-    top: 50px;
-    right: 20%;
+.event p {
+    font-family: 'Roboto', sans-serif; /* Более понятный шрифт для распорядка дня */
+    font-size: 1rem;
 }
 
 .ribbon {
@@ -161,7 +133,7 @@ button:hover {
     top: 0;
     bottom: 0;
     width: 50px;
-    background: url('ribbon-side.png') repeat-y;
+    background: url('ribbon-side.png') repeat-y; /* Добавьте изображение ленточки */
     z-index: 0;
 }
 
@@ -171,15 +143,6 @@ button:hover {
 
 .right-ribbon {
     right: 0;
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
 }
 
 @keyframes fadeIn {
