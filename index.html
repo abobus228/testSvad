@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приглашение на свадьбу Александра и Виктории</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Первый слайд -->
+        <section class="slide" id="slide1">
+            <h1>Александр & Виктория</h1>
+            <h2>08.08.2025</h2>
+            <p>Добро пожаловать на нашу свадьбу!</p>
+            <button onclick="nextSlide()">Далее</button>
+        </section>
+
+        <!-- Второй слайд -->
+        <section class="slide" id="slide2">
+            <h2>Дорогие друзья!</h2>
+            <p>
+                Жить, любить, чувствовать...<br>
+                Однажды мы поняли, что нет ничего важнее этого. И что идти дальше мы хотим только вместе. А теперь мечтаем, чтобы день нашей свадьбы стал красивым и ярким событием на этом увлекательном пути.<br>
+                Мы будем очень рады, если вы разделите этот счастливый день с нами.<br>
+                Увидимся на нашей свадьбе!
+            </p>
+            <button onclick="nextSlide()">Далее</button>
+        </section>
+
+        <!-- Программа дня -->
+        <section class="slide" id="slide3">
+            <h2>Программа дня</h2>
+            <div class="timeline">
+                <div class="event">
+                    <h3>09:00</h3>
+                    <p>Утро невесты - Подружка невесты обязательно!</p>
+                </div>
+                <div class="event">
+                    <h3>09:30</h3>
+                    <p>Сборы жениха - Друг жениха обязательно!</p>
+                </div>
+                <div class="event">
+                    <h3>13:00</h3>
+                    <p>Регистрация в ЗАГСе - Быть всем!</p>
+                </div>
+                <div class="event">
+                    <h3>14:00</h3>
+                    <p>Свадебная прогулка - Кто хочет - может с нами :) Друг жениха, подружка невесты — обязательно!</p>
+                </div>
+                <div class="event">
+                    <h3>16:00</h3>
+                    <p>Сбор гостей в ресторане, праздничный фуршет - Собираемся и знакомимся</p>
+                </div>
+                <div class="event">
+                    <h3>23:00</h3>
+                    <p>Окончание вечера</p>
+                </div>
+            </div>
+            <button onclick="nextSlide()">Далее</button>
+        </section>
+
+        <!-- Подтверждение участия -->
+        <section class="slide" id="slide4">
+            <h2>Подтвердите ваше участие</h2>
+            <p>Пожалуйста, подтвердите, сможете ли вы присутствовать на нашей свадьбе.</p>
+            <form id="responseForm">
+                <input type="text" id="firstName" placeholder="Ваше имя" required>
+                <input type="text" id="lastName" placeholder="Ваша фамилия" required>
+                <button type="button" onclick="sendResponse(true)">Я буду!</button>
+                <button type="button" onclick="sendResponse(false)">К сожалению, не смогу</button>
+            </form>
+        </section>
+
+        <!-- Вопросы и ответы -->
+        <section class="slide" id="slide5">
+            <h2>Ответы на вопросы</h2>
+            <div id="faq">
+                <!-- Вставьте сюда свои вопросы и ответы -->
+                <!-- Пример: -->
+                <!-- <div class="question">
+                    <h3>Вопрос 1</h3>
+                    <p>Ответ на вопрос 1</p>
+                </div> -->
+            </div>
+            <button onclick="nextSlide()">Далее</button>
+        </section>
+
+        <!-- Контакты -->
+        <section class="slide" id="slide6">
+            <h2>Контакты</h2>
+            <p>Александр: <a href="tel:89999999999">8 (999) 999-99-99</a></p>
+            <p>Виктория: <a href="tel:89999999999">8 (999) 999-99-99</a></p>
+            <p>Место проведения: Калининградская область, г. Светлогорск, ул. Тихая, д. 5</p>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
